@@ -1,4 +1,4 @@
-﻿
+
 
 
 var id2 = 999;
@@ -57,7 +57,7 @@ function hidenMymodel()
 
     if (flagmoreinfo == true) {
 
-    $(".table_cube").css('height', 425);
+    $(".table_cube").css('height', 475);
     }
 }
 
@@ -880,7 +880,7 @@ function showMoreInfo(Elementid) {
         }
         preid = Elementid;
         document.getElementById(Elementid).style.visibility = "visible";
-        $(".table_cube").css('height', 425);
+        $(".table_cube").css('height', 475);
 
         flagmoreinfo = true;
 
@@ -984,7 +984,7 @@ function showMoreInfomodel(Elementid, ElementCoinid) {
         }
         preidcoin = ElementCoinid;
         document.getElementById(ElementCoinid).style.visibility = "visible";
-        $(".table_cube").css('height', 425);
+        $(".table_cube").css('height', 475);
 
         flagmoreinfocoin = true;
 
