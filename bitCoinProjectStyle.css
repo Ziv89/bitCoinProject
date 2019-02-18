@@ -1,4 +1,4 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 
 .table_cube {
     position: initial;
@@ -11,7 +11,6 @@
     /*word-break: break-all;*/
     left: 50px;
 }
-
 
 
 table {
@@ -118,14 +117,14 @@ h5 {
 
 h6 {
     position: absolute;
-    left: 1650px;
+    right: 300px;
     top: 126px;
 }
 
 
 h7 {
     position: absolute;
-    left:1780px;
+    right: 250px;
     top: 125px;
 }
 
@@ -164,7 +163,7 @@ h7 {
     width: 60px;
     height: 34px;
     top: -160px;
-    left: 425px;
+    right: -350px;
 }
 
     .switch input {
@@ -271,10 +270,14 @@ textarea {
     border-color: rgba(0, 0, 0, 0);
 }
 
+label {
+    font-size: 200%;
+}
 
 #myText {
     position: absolute;
     top: 400px;
-    left: 1000px;
+    left: 800px;
     visibility: hidden;
+    color: blue;
 }
