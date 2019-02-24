@@ -130,17 +130,17 @@ h7 {
 
 
 .titlecoint {
-    position: relative;
-    left:50px;
+    position: inherit;
+    left: 50px;
 }
 
 .subcoin {
-    position: relative;
+    position: inherit;
     left: 50px;
 }
 
 .moreinfobutton {
-    position: relative;
+    position: inherit;
     left: 50px;
     color: white;
     background-color: darkblue;
@@ -187,7 +187,7 @@ h7 {
 
     .slider:before {
         border-radius: 50%;
-        position: absolute;
+        position: inherit;
         content: "";
         height: 26px;
         width: 26px;
