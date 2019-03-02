@@ -12,7 +12,7 @@ var sixthcoinSymbol = "null";
 var coinsIDarr = ["null", "null", "null", "null", "null"];
 var symbol;
 var coinsIDarrModel = ["null", "null", "null", "null", "null"];
- var coinsSymbols = ["null", "null", "null", "null", "null"];
+var coinsSymbols = ["null", "null", "null", "null", "null"];
 var hourcount = 0;
 var dataCoins1 = [];
 var dataCoins2 = [];
@@ -20,6 +20,7 @@ var dataCoins3 = [];
 var dataCoins4 = [];
 var dataCoins5 = [];
 var dataCoins6 = [];
+var selected = [];
 
 var yValue1 = 600;
 var yValue2 = 605;
@@ -36,8 +37,7 @@ var flagmodel = false;
 var updateInterval = 2000;
 
 
-function hidenMymodel()
-{
+function hidenMymodel() {
     flagmodel = false;
     checkedcounted = 0;
 
@@ -45,8 +45,8 @@ function hidenMymodel()
         if (coinsIDarr[i] != "null") {
             checkedcounted++;
         }
-        }
-    
+    }
+
     document.getElementById("myModal").style.visibility = "hidden";
     sixthcoin = "null";
     sixthcoinSymbol = "null";
@@ -57,7 +57,7 @@ function hidenMymodel()
 
     if (flagmoreinfo == true) {
 
-    $(".table_cube").css('height', 575);
+        $(".table_cube").css('height', 575);
     }
 }
 
@@ -109,7 +109,7 @@ function saveChecked() {
 
     }
 
-    if (flagsixcoin==true) {
+    if (flagsixcoin == true) {
         removeOrAddChecked(sixthcoin, flagsixcoin);
     }
     hidenMymodel();
@@ -151,7 +151,7 @@ function checkIfChecked(ElementID, CoinID, CoinSymbol) {
 
     let min = 0;
     let max = 5;
-   // coinsIDarr
+    // coinsIDarr
     let isChecked = document.getElementById(ElementID).checked;
 
     if (checkedcounted < max)
@@ -170,7 +170,7 @@ function checkIfChecked(ElementID, CoinID, CoinSymbol) {
             return;
         }
 
-    if (checkedcounted > (min-1)) {
+    if (checkedcounted > (min - 1)) {
         if (isChecked == false) {
 
             for (let i = 0; i < coinsIDarr.length; i++) {
@@ -203,9 +203,9 @@ function checkIfChecked(ElementID, CoinID, CoinSymbol) {
 
 
 
-function checkIfCheckedmodel(ElementID, CoinID,CoinSymbol) {
+function checkIfCheckedmodel(ElementID, CoinID, CoinSymbol) {
 
-    
+
 
 
     let isChecked = document.getElementById(ElementID).checked;
@@ -213,37 +213,37 @@ function checkIfCheckedmodel(ElementID, CoinID,CoinSymbol) {
 
     if (isChecked == true) {
         for (let i = 0; i < coinsIDarrModel.length; i++) {
-                if (coinsIDarrModel[i] == "null") {
-                    coinsIDarrModel[i] = CoinID;
-                    checkedcounted++;
-                    return;
-                }
-            }
-
-            if (checkedcounted < 5) {
+            if (coinsIDarrModel[i] == "null") {
+                coinsIDarrModel[i] = CoinID;
                 checkedcounted++;
+                return;
             }
-            return;
         }
+
+        if (checkedcounted < 5) {
+            checkedcounted++;
+        }
+        return;
+    }
 
 
     if (isChecked == false) {
 
         for (let i = 0; i < coinsIDarrModel.length; i++) {
-                if (coinsIDarrModel[i] == CoinID) {
-                    coinsIDarrModel[i] = "null";
+            if (coinsIDarrModel[i] == CoinID) {
+                coinsIDarrModel[i] = "null";
 
-                    checkedcounted--;
-                    return;
-                }
-            }
-            if (checkedcounted > 0) {
                 checkedcounted--;
+                return;
             }
-
-            return;
         }
+        if (checkedcounted > 0) {
+            checkedcounted--;
+        }
+
+        return;
     }
+}
 
 
 
@@ -270,8 +270,8 @@ function newWindowTable() {
                         let titlecoin = result[i].name;
                         let subcoin = result[i].symbol;
                         let id = i + "coin";
-                        let coinid = result[i].id; 
-                        let coinmodelis =coinid + "coin";
+                        let coinid = result[i].id;
+                        let coinmodelis = coinid + "coin";
                         let html = '<br><br><div class="titlecoint"><b><font size=3>' + titlecoin + '</font></b></div>';
 
 
@@ -293,7 +293,7 @@ function newWindowTable() {
 
 
 
-     
+
                         $(".table_list_model").append(table_cube);
 
                         document.getElementById(id).checked = true;
@@ -317,13 +317,13 @@ function getCoins() {
         data: {}, // the data we want to send to the server
         success: function (result) { // the callback function to run when we get the data back from the server
             console.log(result);
-        // document.getElementsByClassName("loader").style.visibility = "visible";
+            // document.getElementsByClassName("loader").style.visibility = "visible";
 
 
 
 
-             
-            for (let i = 0; i <100; i++) {
+
+            for (let i = 0; i < 100; i++) {
 
                 let table_cube = $("<div  class='table_cube'></div>");
 
@@ -343,18 +343,18 @@ function getCoins() {
 
                 //html += "<div><label  class=switch   onchange=checkIfChecked('" + coinid + "');>" + "<input type =checkbox id=" + id + "><span  class=slider round ></span></label></div>';
 
-                html += "<div ><label  class=switch  onchange=checkIfChecked(" + id + ",'" + coinid + "','" + subcoin + "')><input type =checkbox id=" + id +"><span  class=slider round></span></label></div>";
+                html += "<div ><label  class=switch  onchange=checkIfChecked(" + id + ",'" + coinid + "','" + subcoin + "')><input type =checkbox id=" + id + "><span  class=slider round></span></label></div>";
 
                 html += "<div class=moreinfo  id='" + coinid + "' value= " + coinid + "></div>";
-               // html += "<br><br><div class=moreinfo id=" + coinid + "'value=" + coinid+"</div>";
+                // html += "<br><br><div class=moreinfo id=" + coinid + "'value=" + coinid+"</div>";
 
 
-               // html += "<br><div class=moreinfo  id='" + titlecoin + '"><b>' + titlecoin + '</b><br><br></div>';
+                // html += "<br><div class=moreinfo  id='" + titlecoin + '"><b>' + titlecoin + '</b><br><br></div>';
                 $(table_cube).html(html);
 
                 $(".table_list").append(table_cube);
 
-   
+
                 for (let j = 0; j < coinsIDarr.length; j++) {
                     if (coinsIDarr[j] != "null") {
                         //removeOrAddChecked(coinsIDarr[j], true);
@@ -378,7 +378,7 @@ function getPriceCoins() {
     let coins = "";
 
 
-   let SymbolsArr= ["null", "null", "null", "null", "null"];
+    let SymbolsArr = ["null", "null", "null", "null", "null"];
 
     let j = 0;
     let flag = false;
@@ -419,7 +419,7 @@ function getCoinsGraph(coins, SymbolsArr) {
     var chart = new CanvasJS.Chart("coinsChartComprasion", {
         zoomEnabled: false,
         title: {
-            text:"USD"
+            text: "USD"
         },
         axisX: {
             title: "chart updates every 2 secs"
@@ -458,43 +458,43 @@ function getCoinsGraph(coins, SymbolsArr) {
             name: SymbolsArr[0],
             dataPoints: [
                /*{ label: "00:00", y: 1 }*/]
-            },
-            {
-                type: "line",
-                xValueType: "dateTime",
-                yValueFormatString: "$####.00",
-                showInLegend: flagcoinsarr[1],
-                name: SymbolsArr[1],
-                dataPoints: [
+        },
+        {
+            type: "line",
+            xValueType: "dateTime",
+            yValueFormatString: "$####.00",
+            showInLegend: flagcoinsarr[1],
+            name: SymbolsArr[1],
+            dataPoints: [
                    /* { label: "00:00", y: 1 }*/]
-            },
-            {
-                type: "line",
-                xValueType: "dateTime",
-                yValueFormatString: "$####.00",
-                showInLegend: flagcoinsarr[2],
-                name: SymbolsArr[2],
-                dataPoints: [
+        },
+        {
+            type: "line",
+            xValueType: "dateTime",
+            yValueFormatString: "$####.00",
+            showInLegend: flagcoinsarr[2],
+            name: SymbolsArr[2],
+            dataPoints: [
                     /*{ label: "00:00", y: 1 }*/]
-            },
-            {
-                type: "line",
-                xValueType: "dateTime",
-                yValueFormatString: "$####.00",
-                showInLegend: flagcoinsarr[3],
-                name: SymbolsArr[3],
-                dataPoints: [
+        },
+        {
+            type: "line",
+            xValueType: "dateTime",
+            yValueFormatString: "$####.00",
+            showInLegend: flagcoinsarr[3],
+            name: SymbolsArr[3],
+            dataPoints: [
                     /*{ label: "00:00", y: 1 }*/]
-            },
-               {
-                type: "line",
-                xValueType: "dateTime",
-                yValueFormatString: "$####.00",
-                showInLegend: flagcoinsarr[4],
-                name: SymbolsArr[4],
-                dataPoints: [
+        },
+        {
+            type: "line",
+            xValueType: "dateTime",
+            yValueFormatString: "$####.00",
+            showInLegend: flagcoinsarr[4],
+            name: SymbolsArr[4],
+            dataPoints: [
                    /* { label: "00:00", y: 1 }*/]
-            }
+        }
         ]
     });
 
@@ -507,11 +507,11 @@ function getCoinsGraph(coins, SymbolsArr) {
             success: function (result) { // the callback function to run when we get the data back from the server
                 console.log(result);
 
-    
+
                 let CoinSymbolsArr = JSON.stringify(result);
                 let coinusd = result.USD;
                 let coinstitle = "";
-                let coinsnotsupported ="";
+                let coinsnotsupported = "";
                 let coin1 = null;
                 let coin2 = null;
                 let coin3 = null;
@@ -520,7 +520,7 @@ function getCoinsGraph(coins, SymbolsArr) {
                 let countnotexist = 0;
                 dataCoins1.push(chart.options.data[0].dataPoints);
 
-  
+
                 if (SymbolsArr[0] != "null") {
                     dataCoins2.push(chart.options.data[1].dataPoints);
                     coin1 = result[SymbolsArr[0]];
@@ -535,11 +535,11 @@ function getCoinsGraph(coins, SymbolsArr) {
                     }
 
                 }
-                    else {
+                else {
                     countnotexist++;
                 }
 
-                
+
 
                 if (SymbolsArr[1] != "null") {
 
@@ -567,12 +567,12 @@ function getCoinsGraph(coins, SymbolsArr) {
                             coinsnotsupported += SymbolsArr[1];
                         }
                         else {
-                            coinsnotsupported +=","+SymbolsArr[1];
+                            coinsnotsupported += "," + SymbolsArr[1];
                         }
                         countnotexist++;
 
                     }
-        
+
 
                 }
                 else {
@@ -710,7 +710,7 @@ function getCoinsGraph(coins, SymbolsArr) {
                 s = checkTime(s);
 
                 let fullhour = m + ":" + s;
- 
+
                 if (hourcount >= 3600) {
                     h = parseInt((hourcount / 3600));
                     h = checkTime(h);
@@ -718,12 +718,12 @@ function getCoinsGraph(coins, SymbolsArr) {
                     fullhour = h + ":" + m + ":" + s;
 
                 }
-            
+
                 var boilerColor, delytey, yVal;
 
 
 
-                for (var i = (dataCoins1.length-1); i < dataCoins1.length; i++) {
+                for (var i = (dataCoins1.length - 1); i < dataCoins1.length; i++) {
 
 
 
@@ -731,14 +731,14 @@ function getCoinsGraph(coins, SymbolsArr) {
                     yVal = coinusd + dataCoins1[i].y > 0 ? dataCoins1[i].y + coinusd : coinusd;
                     boilerColor = "#0080FF";
                     dataCoins1[i] = { label: fullhour, y: coinusd, color: boilerColor };
-                    chart.options.data[0].dataPoints = dataCoins1; 
+                    chart.options.data[0].dataPoints = dataCoins1;
 
 
                     if (coin1 != null) {
-                       // yVal = coin1 + dataCoins2[i].y > 0 ? dataCoins2[i].y + coin1 : coin1;
+                        // yVal = coin1 + dataCoins2[i].y > 0 ? dataCoins2[i].y + coin1 : coin1;
                         boilerColor = "#A52A2A";
                         dataCoins2[i] = { label: fullhour, y: coin1, color: boilerColor };
-                        chart.options.data[1].dataPoints = dataCoins2; 
+                        chart.options.data[1].dataPoints = dataCoins2;
                     }
 
 
@@ -793,8 +793,8 @@ function getCoinsGraph(coins, SymbolsArr) {
 
                 if (coinsnotsupported != "") {
 
-              
-                     document.getElementById("nosupport").style.visibility = "visible";
+
+                    document.getElementById("nosupport").style.visibility = "visible";
 
                     document.getElementById("nosupport").innerHTML = "The Following Coins: <b>" + coinsnotsupported + "</b> Are not supported!";
                 }
@@ -808,7 +808,7 @@ function getCoinsGraph(coins, SymbolsArr) {
                     return;
                 }
 
-                if (countnotexist == 5 && coinsnotsupported =="") {
+                if (countnotexist == 5 && coinsnotsupported == "") {
 
 
                     document.getElementById("nosupport").style.visibility = "visible";
@@ -830,27 +830,29 @@ function getCoinsGraph(coins, SymbolsArr) {
     time.setMinutes(0);
     time.setSeconds(0);
 
-  // updateChart(100, coins, SymbolsArr);
-   // clearInterval(myVar);
+    // updateChart(100, coins, SymbolsArr);
+    // clearInterval(myVar);
     var myVar = setInterval(function () { updateChart(coins, SymbolsArr, time) }, updateInterval);
 
     //chart.render();
     //var myVar = setInterval(function () { updateChart(100, coins) }, updateInterval);
 
     $("#Home-button").click(function (e) {
+        hidenMymodel();
         clearInterval(myVar);
         document.getElementById("nosupport").style.visibility = "hidden";
-         dataCoins1 = [];
-         dataCoins2 = [];
-         dataCoins3 = [];
-         dataCoins4 = [];
-         dataCoins5 = [];
-         dataCoins6 = [];
+        dataCoins1 = [];
+        dataCoins2 = [];
+        dataCoins3 = [];
+        dataCoins4 = [];
+        dataCoins5 = [];
+        dataCoins6 = [];
         chart.destroy();
 
     });
 
     $("#about-button").click(function (e) {
+        hidenMymodel();
         document.getElementById("nosupport").style.visibility = "hidden";
         dataCoins1 = [];
         dataCoins2 = [];
@@ -870,18 +872,28 @@ function checkTime(i) {
 }
 
 function showMoreInfo(Elementid) {
+    let flagfound = false;
+
+    if (selected.length > 0) {
+
+    
+    for (let i = 0; i < selected.length; i++) {
+        if (selected[i] == Elementid) {
+            flagfound = true;
+        }
+    }
+    }
 
 
-
-    if (flagmoreinfo == false || Elementid != preid) {
+    if (flagmoreinfo == false && flagfound==false || Elementid != preid && flagfound==false) {
         if (preid != "null") {
 
-           // document.getElementById(preid).style.visibility = "hidden";
+            // document.getElementById(preid).style.visibility = "hidden";
         }
+        selected.push(Elementid);
         preid = Elementid;
         document.getElementById(Elementid).style.visibility = "visible";
-        $(".table_cube").css('height',575);
-
+        $(".table_cube").css('height', 575);
         flagmoreinfo = true;
 
         // document.getElementById(Elementid).innerHTML = "";
@@ -892,7 +904,7 @@ function showMoreInfo(Elementid) {
         //document.getElementById(preid).style.visibility = "hidden";
         hideAllPictures(false);
         $(".table_cube").css('height', 300);
-
+        selected = [];
         flagmoreinfo = false;
 
         return;
@@ -906,13 +918,13 @@ function showMoreInfo(Elementid) {
 
         for (let i = 0; i < coinsarr.length; i++) {
             if (Elementid == coinsarr[i].coinsid) {
-                document.getElementById(Elementid).innerHTML = "'<div align=center><img src=" + coinsarr[i].image + " height=50 width=50></b><br><br> <b>USD:</b> " + coinsarr[i].coinsUSD + "<b>$</b><br><br> <b>EURO:</b> " + coinsarr[i].coinsEUR + "<b>€</b> <br><br> <b>ILS:</b> " + coinsarr[i].coinsILS + "<b>₪</b></div>";
+                document.getElementById(Elementid).innerHTML = "<div align=center><img src=" + coinsarr[i].image + " height=50 width=50></b><br><br> <b>USD:</b> " + coinsarr[i].coinsUSD + "<b>$</b><br><br> <b>EURO:</b> " + coinsarr[i].coinsEUR + "<b>€</b> <br><br> <b>ILS:</b> " + coinsarr[i].coinsILS + "<b>₪</b></div>";
 
                 return;
             }
         }
 
-        
+
     }
 
 
@@ -928,7 +940,7 @@ function showMoreInfo(Elementid) {
 
             var x = image.thumb;
 
-            document.getElementById(Elementid).innerHTML = "'<div align=center><img src=" + x + " height=50 width=50></b><br><br> <b>USD:</b> " + coins.usd + "<b>$</b><br><br> <b>EURO:</b> " + coins.eur + "<b>€</b> <br><br> <b>ILS:</b> " + coins.ils + "<b>₪</b></div>";
+            document.getElementById(Elementid).innerHTML = "<div align=center><img src=" + x + " height=50 width=50></b><br><br> <b>USD:</b> " + coins.usd + "<b>$</b><br><br> <b>EURO:</b> " + coins.eur + "<b>€</b> <br><br> <b>ILS:</b> " + coins.ils + "<b>₪</b></div>";
             setCoinsStroage(Elementid, x, coins.usd, coins.eur, coins.ils);
 
         }
@@ -938,16 +950,16 @@ function showMoreInfo(Elementid) {
 
 
 function setCoinsStroage(coinsid, image, coinsUSD, coinsEUR, coinsILS) {
-   // Elementid, image, coins
+    // Elementid, image, coins
 
 
-            addCoins({
-                coinsid,
-                image,
-                coinsUSD,
-                coinsEUR,
-                coinsILS,
-            });
+    addCoins({
+        coinsid,
+        image,
+        coinsUSD,
+        coinsEUR,
+        coinsILS,
+    });
 
 }
 
@@ -956,7 +968,7 @@ function addCoins(coinCurrency) {
 
     if (typeof localStorage.coinCurrency == 'undefined') {
         localStorage.coinCurrency = JSON.stringify([]);
-    } 
+    }
 
     let coins = JSON.parse(localStorage.coinCurrency);
     coins.push(coinCurrency);
@@ -977,15 +989,27 @@ function RemoveCoinsStroage() {
 
 function showMoreInfomodel(Elementid, ElementCoinid) {
 
-    if (flagmoreinfocoin == false || ElementCoinid != preidcoin) {
+    let flagfound = false;
+    if (selected.length > 0) {
+
+
+        for (let i = 0; i < selected.length; i++) {
+            if (selected[i] == ElementCoinid) {
+                flagfound = true;
+            }
+        }
+    }
+
+
+    if (flagmoreinfocoin == false && flagfound == false || ElementCoinid != preidcoin && flagfound == false ) {
         if (preidcoin != "null") {
 
-           // document.getElementById(preidcoin).style.visibility = "hidden";
+            // document.getElementById(preidcoin).style.visibility = "hidden";
         }
         preidcoin = ElementCoinid;
         document.getElementById(ElementCoinid).style.visibility = "visible";
         $(".table_cube").css('height', 575);
-
+        selected.push(ElementCoinid);
         flagmoreinfocoin = true;
 
         // document.getElementById(Elementid).innerHTML = "";
@@ -993,10 +1017,10 @@ function showMoreInfomodel(Elementid, ElementCoinid) {
 
     }
     else {
-       // document.getElementById(preidcoin).style.visibility = "hidden";
+        // document.getElementById(preidcoin).style.visibility = "hidden";
         hideAllPictures(true);
         $(".table_cube").css('height', 300);
-
+        selected = [];
         flagmoreinfocoin = false;
 
         return;
@@ -1010,7 +1034,7 @@ function showMoreInfomodel(Elementid, ElementCoinid) {
 
         for (let i = 0; i < coinsarr.length; i++) {
             if (ElementCoinid == coinsarr[i].coinsid) {
-                document.getElementById(ElementCoinid).innerHTML = "'<div align=center><img src=" + coinsarr[i].image + " height=50 width=50></b><br><br> <b>USD:</b> " + coinsarr[i].coinsUSD + "<b>$</b><br><br> <b>EURO:</b> " + coinsarr[i].coinsEUR + "<b>€</b> <br><br> <b>ILS:</b> " + coinsarr[i].coinsILS + "<b>₪</b></div>";
+                document.getElementById(ElementCoinid).innerHTML = "<div align=center><img src=" + coinsarr[i].image + " height=50 width=50></b><br><br> <b>USD:</b> " + coinsarr[i].coinsUSD + "<b>$</b><br><br> <b>EURO:</b> " + coinsarr[i].coinsEUR + "<b>€</b> <br><br> <b>ILS:</b> " + coinsarr[i].coinsILS + "<b>₪</b></div>";
                 return;
             }
         }
@@ -1029,7 +1053,7 @@ function showMoreInfomodel(Elementid, ElementCoinid) {
 
             var x = image.thumb;
 
-            document.getElementById(ElementCoinid).innerHTML = "'<div align=center><img src=" + x + " height=50 width=50></b><br><br> <b>USD:</b> " + coins.usd + "<b>$</b><br><br> <b>EURO:</b> " + coins.eur + "<b>€</b> <br><br> <b>ILS:</b> " + coins.ils + "<b>₪</b></div>";
+            document.getElementById(ElementCoinid).innerHTML = "<div align=center><img src=" + x + " height=50 width=50></b><br><br> <b>USD:</b> " + coins.usd + "<b>$</b><br><br> <b>EURO:</b> " + coins.eur + "<b>€</b> <br><br> <b>ILS:</b> " + coins.ils + "<b>₪</b></div>";
 
             setCoinsStroage(ElementCoinid, x, coins.usd, coins.eur, coins.ils);
         }
@@ -1062,42 +1086,42 @@ function searchFunction() {
                 for (let i = 0; i < 100; i++) {
 
 
-                  
+
 
                     tempString = result[i].name.toString().substring(0, searchString.length);
 
-     
+
                     if (tempString == searchString) {
-   
+
                         let table_cube = $("<div  class='table_cube'></div>");
 
-                    //let table_cube = $("<div class='country_cube'></div>");
-                    //$(".country_cube").css("text-align", "center");
-                    //$(".country_cube").css("float", "left");
-                    let titlecoin = result[i].name;
-                    let subcoin = result[i].symbol;
-                    let id = i;
-                    let coinid = result[i].id;
-                    let html = '<br><br><div class="titlecoint"><b><font size=3>' + titlecoin + '</font></b></div>';
+                        //let table_cube = $("<div class='country_cube'></div>");
+                        //$(".country_cube").css("text-align", "center");
+                        //$(".country_cube").css("float", "left");
+                        let titlecoin = result[i].name;
+                        let subcoin = result[i].symbol;
+                        let id = i;
+                        let coinid = result[i].id;
+                        let html = '<br><br><div class="titlecoint"><b><font size=3>' + titlecoin + '</font></b></div>';
 
-                    html += '<br><br><div class="subcoin" "><font size=2>' + subcoin + '</font></div>';
+                        html += '<br><br><div class="subcoin" "><font size=2>' + subcoin + '</font></div>';
 
 
-                    html += "<label ><br><br><br><br><button class=moreinfobutton onclick=showMoreInfo('" + coinid + "');>" + "More Info" + '</button></label>';
+                        html += "<label ><br><br><br><br><button class=moreinfobutton onclick=showMoreInfo('" + coinid + "');>" + "More Info" + '</button></label>';
 
-                    //html += "<div><label  class=switch   onchange=checkIfChecked('" + coinid + "');>" + "<input type =checkbox id=" + id + "><span  class=slider round ></span></label></div>';
+                        //html += "<div><label  class=switch   onchange=checkIfChecked('" + coinid + "');>" + "<input type =checkbox id=" + id + "><span  class=slider round ></span></label></div>';
 
                         html += "<div ><label  class=switch  onchange=checkIfChecked(" + id + ",'" + coinid + "','" + subcoin + "')><input type =checkbox id=" + id + "><span  class=slider round></span></label></div>";
 
-                    html += "<div class=moreinfo  id='" + coinid + "' value= " + coinid + "></div>";
-                    // html += "<br><br><div class=moreinfo id=" + coinid + "'value=" + coinid+"</div>";
+                        html += "<div class=moreinfo  id='" + coinid + "' value= " + coinid + "></div>";
+                        // html += "<br><br><div class=moreinfo id=" + coinid + "'value=" + coinid+"</div>";
 
 
-                    // html += "<br><div class=moreinfo  id='" + titlecoin + '"><b>' + titlecoin + '</b><br><br></div>';
-                    // html += "<br><div class=moreinfo  id='" + titlecoin + '"><b>' + titlecoin + '</b><br><br></div>';
-                    $(table_cube).html(html);
+                        // html += "<br><div class=moreinfo  id='" + titlecoin + '"><b>' + titlecoin + '</b><br><br></div>';
+                        // html += "<br><div class=moreinfo  id='" + titlecoin + '"><b>' + titlecoin + '</b><br><br></div>';
+                        $(table_cube).html(html);
 
-                    $(".table_list").append(table_cube);
+                        $(".table_list").append(table_cube);
 
                         for (let j = 0; j < coinsIDarr.length; j++) {
                             if (coinsIDarr[j] != "null") {
@@ -1137,7 +1161,7 @@ function homeFunction() {
 
     document.getElementById("search-box").value = "";
 
-    
+
     document.getElementById("about-button").style.backgroundColor = "white";
     document.getElementById("about-button").style.color = "black";
     document.getElementById("about-button").style.border = "none";
@@ -1155,22 +1179,23 @@ function homeFunction() {
     document.getElementById("Home-button").style.border.color = "black";
 
 
-  
+
     getLoading();
     getCoins();
 
-    
+
     var myVar = setInterval(function () { RemoveCoinsStroage() }, 120 * 1000);
 
 
     $("#liveReports").click(function (e) {
-         RemoveCoinsStroage();
+        hidenMymodel();
+        RemoveCoinsStroage();
         clearInterval(myVar);
 
     });
 
     $("#about-button").click(function (e) {
-       RemoveCoinsStroage();
+        RemoveCoinsStroage();
         clearInterval(myVar);
 
     });
@@ -1316,8 +1341,8 @@ function hideAllPictures(flag) {
 
                     coinid = document.getElementById(result[i].id);
                     //alert(x);
-                    if (coinid!= null) {
-                       // alert("yes");
+                    if (coinid != null) {
+                        // alert("yes");
                         document.getElementById(result[i].id).style.visibility = "hidden";
                     }
                 }
@@ -1331,7 +1356,7 @@ function hideAllPictures(flag) {
                         }
                     }
                 }
-         
+
 
             };
         }
