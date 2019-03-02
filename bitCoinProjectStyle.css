@@ -19,7 +19,7 @@ table {
 
 .table_list {
     position: absolute;
-    left: 300px;
+    left: 200px;
     top: 10px;
 }
 
@@ -91,41 +91,41 @@ h2 {
 
 h3 {
     position: absolute;
-    left: 265px;
+    left: 260px;
     top: 120px;
-    width: 60px;
+    width: 70px;
     height: 35px;
 }
 
 
-h4 {
+#liveReports {
     position: absolute;
     left: 330px;
-    top: 122px;
-    height: 35px;
+    top: 145px;
+    height: 30px;
     width: 95px;
 }
 
 
-h5 {
+#about-button {
     position: absolute;
     left: 430px;
-    top: 121px;
-    width: 55px;
+    top: 140px;
+    width: 65px;
     height: 35px;
 }
 
-h6 {
+#search-box {
     position: absolute;
     right: 300px;
-    top: 126px;
+    top: 135px;
 }
 
 
-h7 {
+#search-button {
     position: absolute;
-    right: 250px;
-    top: 125px;
+    right: 230px;
+    top: 130px;
 }
 
 
@@ -144,7 +144,7 @@ h7 {
     left: 50px;
     color: white;
     background-color: darkblue;
-    height: 40px;
+    height: 45px;
     width: 150px;
 }
 
@@ -163,7 +163,7 @@ h7 {
     width: 60px;
     height: 34px;
     top: -160px;
-    left: 300px;
+    right: -200px;
 }
 
     .switch input {
