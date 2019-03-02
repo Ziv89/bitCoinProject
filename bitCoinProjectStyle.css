@@ -24,19 +24,21 @@
 
 
 
+
 table {
     position: absolute;
+
 }
 
 .table_list {
     position: absolute;
-    left: 400px;
     top: 10px;
+    margin-left: 25%;
 }
 
 .table_list_model {
     position: absolute;
-    left: 200px;
+    margin-left: 10%;
     top: 1px;
 }
 
