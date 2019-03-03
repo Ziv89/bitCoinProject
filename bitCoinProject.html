@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cryptonite</title>
+    <link href="bitCoinProjectStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body align="center">
+    <h1 style="height:100px"></h1>
+    <h2><font size="5">Cryptonite</font></h2>
+    <div class="kryptonite">
+        <img src="projectimages/kryptonite.jpg" height="100" width="100">
+    </div>
+
+    <div class="wholetable">
+        <h3 id="Home-button" onclick="homeFunction()" style="background: blue; cursor: pointer"> Home</h3>
+        <!--  -->
+        <h4 id="liveReports" onclick="liveReportsFunction()" style="background: white; cursor: pointer">Live Reports</h4>
+
+
+        <h5 onclick="aboutFunction()" id="about-button" style="background: white; cursor: pointer"><font size="3">About</font> </h5>
+
+        <h6><input id="search-box" placeholder="Search" type="text" /></h6>
+
+
+        <h7> <button id="search-button" type="button" style="background: white" onclick="searchFunction()">Search</button></h7>
+
+        <br />
+        <br />
+        <br />
+
+
+        <div class="row">
+            <div class="col-md-10">
+
+                <table class="table_list" id="task_table"></table>
+            </div>
+        </div>
+        <!-- Modal -->
+
+
+
+        <div id="myModal" class="modal-dialog modal-lg">
+            <div class="modal-dialog">
+                <div class="modal-content" style="height:950px; width:1800px; background-color:ivory">
+                    <div class="modal-header" style="width:1800px">
+                        <!--<button type="button" class="close" data-dismiss="modal" onclick="hidenMymodel()" aria-hidden="true">&times;</button>-->
+                        <h8 class="modal-title" style="width:1250px">You have reached The maximum number of coins,please decrease at least one of the selected to select this one</h8>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-10">
+
+                                <table class="table_list_model" id="model_table"></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" onclick="hidenMymodel()" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="saveChecked()">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+        <div id="coinsChartComprasion" style="height: 650px; width: 100%;"></div>
+
+
+        <div id="mejpg"> <img src="projectimages/me.jpg" height="200" width="200"></div>
+        <div class="loader" id="loading"></div>
+
+        <div id="nosupport"></div>
+        <div>
+        <label>
+            <textarea rows="5" align="center"  id="myText" cols="58"  style="resize:none" readonly>שמי זיו שמיר מקיבוץ משמר העמק, עוסק בתכנות, הפרוייקט הנכחי הוא על מטבעות והשוואותיהם לדולרים</textarea>
+        </label>
+        </div>
+
+    </div>
+        <script src="bitCoinProjectfunctions.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+        <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="js/jquery.flot.min.js"></script>
+</body>
+</html>
