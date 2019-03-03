@@ -27,7 +27,6 @@
 
 table {
     position: absolute;
-
 }
 
 .table_list {
@@ -87,10 +86,10 @@ h1 {
     border-bottom: 2px dashed #337AB7;
 }
 
-h2 {
+#cryptonite {
     position: absolute;
     left: 10px;
-    top: 35px;
+    top: 40px;
 }
 
 .kryptonite {
@@ -101,43 +100,43 @@ h2 {
 }
 
 
-h3 {
+#Home-button {
     position: absolute;
-    left: 260px;
+    left: 200px;
     top: 120px;
     width: 70px;
-    height: 35px;
+    height: 40px;
 }
 
 
 #liveReports {
     position: absolute;
-    left: 330px;
-    top: 145px;
-    height: 30px;
-    width: 95px;
+    left: 280px;
+    top: 120px;
+    height: 40px;
+    width: 145px;
 }
 
 
 #about-button {
     position: absolute;
     left: 430px;
-    top: 140px;
-    width: 65px;
-    height: 35px;
+    top: 120px;
+    width: 70px;
+    height: 40px;
 }
 
 #search-box {
     position: absolute;
     right: 300px;
-    top: 140px;
+    top: 120px;
 }
 
 
 #search-button {
     position: absolute;
     right: 230px;
-    top: 140px;
+    top: 120px;
 }
 
 
