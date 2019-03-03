@@ -876,16 +876,16 @@ function showMoreInfo(Elementid) {
 
     if (selected.length > 0) {
 
-    
-    for (let i = 0; i < selected.length; i++) {
-        if (selected[i] == Elementid) {
-            flagfound = true;
+
+        for (let i = 0; i < selected.length; i++) {
+            if (selected[i] == Elementid) {
+                flagfound = true;
+            }
         }
     }
-    }
 
 
-    if (flagmoreinfo == false && flagfound==false || Elementid != preid && flagfound==false) {
+    if (flagmoreinfo == false && flagfound == false || Elementid != preid && flagfound == false) {
         if (preid != "null") {
 
             // document.getElementById(preid).style.visibility = "hidden";
@@ -1001,7 +1001,7 @@ function showMoreInfomodel(Elementid, ElementCoinid) {
     }
 
 
-    if (flagmoreinfocoin == false && flagfound == false || ElementCoinid != preidcoin && flagfound == false ) {
+    if (flagmoreinfocoin == false && flagfound == false || ElementCoinid != preidcoin && flagfound == false) {
         if (preidcoin != "null") {
 
             // document.getElementById(preidcoin).style.visibility = "hidden";
