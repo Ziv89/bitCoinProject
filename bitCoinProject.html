@@ -13,29 +13,26 @@
 </head>
 <body align="center">
     <h1 style="height:100px"></h1>
-    <h2><font size="5">Cryptonite</font></h2>
+    <div id="cryptonite"><font size="5">Cryptonite</font></div>
     <div class="kryptonite">
         <img src="projectimages/kryptonite.jpg" height="100" width="100">
     </div>
     <div class="wholetable">
-        <h3 id="Home-button" onclick="homeFunction()" style="background: blue; cursor: pointer"> Home</h3>
+        <div id="Home-button" onclick="homeFunction()" style="background: blue; cursor: pointer"> <font size="5">Home</font></div>
         <!--  -->
-        <div id="liveReports" onclick="liveReportsFunction()" style="background: white; cursor: pointer"><font size="3">Live Reports</font></div>
+        <div id="liveReports" onclick="liveReportsFunction()" style="background: white; cursor: pointer"><font size="5">Live Reports</font></div>
     </div>
     <div onclick="aboutFunction()" id="about-button" style="background: white; cursor: pointer"><font size="5">About</font> </div>
     <div><input id="search-box" placeholder="Search" type="text" /></div>
-
     <button id="search-button" type="button" style="background: white" onclick="searchFunction()">Search</button>
     <br />
     <br />
     <br />
-
     <div class="row">
         <div class="col-md-10">
             <table class="table_list" id="task_table"></table>
         </div>
         <!-- Modal -->
-
         <div id="myModal" class="modal-dialog modal-lg">
             <div class="modal-dialog">
                 <div class="modal-content" style="height:1300px; width:1800px; background-color:ivory">
@@ -57,9 +54,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-
         <div id="coinsChartComprasion" style="height: 650px; width: 100%;"></div>
-
         <div id="mejpg"> <img src="projectimages/me.jpg" height="200" width="200"></div>
         <div class="loader" id="loading"></div>
         <div id="nosupport"></div>
