@@ -1,0 +1,280 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+.table_cube {
+    position: initial;
+    display: inline-table;
+    margin-left: 1px;
+    margin-top: 1px;
+    border-style: outset;
+    height: 300px;
+    width: 500px;
+    /*word-break: break-all;*/
+    left: 50px;
+}
+
+
+
+table {
+    position: absolute;
+}
+
+.table_list {
+    position: absolute;
+    left: 300px;
+    top: 10px;
+}
+
+.table_list_model {
+    position: absolute;
+    left: 200px;
+    top: 1px;
+}
+
+
+
+
+#myModal {
+    visibility: hidden;
+    margin-bottom: 900px;
+    left: -600px;
+}
+
+.modal .modal-dialog {
+    width: 850px;
+}
+
+
+h1 {
+    /*position: absolute;
+    right: 225px;
+    top: 50px;*/
+    background-color: lightgray;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-style: outset;
+}
+
+#coinsChartComprasion {
+    position: absolute;
+    top: 200px;
+    visibility: hidden;
+}
+
+
+#mejpg {
+    position: absolute;
+    top: 150px;
+    left: 1000px;
+    visibility: hidden;
+}
+
+
+.modal-header {
+    background-color: #337AB7;
+    padding: 16px 16px;
+    color: #FFF;
+    border-bottom: 2px dashed #337AB7;
+}
+
+h2 {
+    position: absolute;
+    left: 10px;
+    top: 35px;
+}
+
+.kryptonite {
+    position: absolute;
+    right: 1px;
+    top: 40px;
+    border-style: outset;
+}
+
+
+h3 {
+    position: absolute;
+    left: 265px;
+    top: 120px;
+    width: 60px;
+    height: 35px;
+}
+
+
+h4 {
+    position: absolute;
+    left: 330px;
+    top: 122px;
+    height: 35px;
+    width: 95px;
+}
+
+
+h5 {
+    position: absolute;
+    left: 430px;
+    top: 121px;
+    width: 55px;
+    height: 35px;
+}
+
+h6 {
+    position: absolute;
+    left: 1650px;
+    top: 126px;
+}
+
+
+h7 {
+    position: absolute;
+    left:1780px;
+    top: 125px;
+}
+
+
+.titlecoint {
+    position: relative;
+    left:50px;
+}
+
+.subcoin {
+    position: relative;
+    left: 50px;
+}
+
+.moreinfobutton {
+    position: relative;
+    left: 50px;
+    color: white;
+    background-color: darkblue;
+    height: 40px;
+    width: 100px;
+}
+
+
+.moreinfo{
+    position: initial;
+    left: 50px;
+    height: 40px;
+    visibility:hidden;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    top: -160px;
+    left: 425px;
+}
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        border-radius: 50%;
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+#loading {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 150px;
+    left: 1000px;
+    visibility: hidden;
+}
+
+#nosupport {
+
+    position: absolute;
+    top: 150px;
+    left: 1000px;
+    visibility: hidden;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+textarea {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+
+#myText {
+    position: absolute;
+    top: 400px;
+    left: 1000px;
+    visibility: hidden;*/
+}
