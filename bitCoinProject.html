@@ -18,24 +18,28 @@
         <img src="projectimages/kryptonite.jpg" height="100" width="100">
     </div>
     <div class="wholetable">
-        <div id="Home-button" onclick="homeFunction()" style="background: blue; cursor: pointer"> <font size="5">Home</font></div>
+        <div id="Home-button" onclick="homeFunction()" style="background: blue; cursor: pointer"><font size="5"> Home</font></div>
         <!--  -->
         <div id="liveReports" onclick="liveReportsFunction()" style="background: white; cursor: pointer"><font size="5">Live Reports</font></div>
-    </div>
-    <div onclick="aboutFunction()" id="about-button" style="background: white; cursor: pointer"><font size="5">About</font> </div>
-    <div><input id="search-box" placeholder="Search" type="text" /></div>
-    <button id="search-button" type="button" style="background: white" onclick="searchFunction()">Search</button>
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-10">
-            <table class="table_list" id="task_table"></table>
+
+        <div onclick="aboutFunction()" id="about-button" style="background: white; cursor: pointer"><font size="5">About</font> </div>
+        <div><input id="search-box" placeholder="Search" type="text" /></div>
+
+        <div> <button id="search-button" type="button" style="background: white" onclick="searchFunction()">Search</button></div>
+        <br />
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col-md-10">
+                <table class="table_list" id="task_table"></table>
+            </div>
         </div>
         <!-- Modal -->
+
         <div id="myModal" class="modal-dialog modal-lg">
             <div class="modal-dialog">
-                <div class="modal-content" style="height:1300px; width:1800px; background-color:ivory">
+                <div class="modal-content" style="height:950px; width:1800px; background-color:ivory">
                     <div class="modal-header" style="width:1800px">
                         <!--<button type="button" class="close" data-dismiss="modal" onclick="hidenMymodel()" aria-hidden="true">&times;</button>-->
                         <h8 class="modal-title" style="width:1250px">You have reached The maximum number of coins,please decrease at least one of the selected to select this one</h8>
@@ -54,13 +58,17 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
         <div id="coinsChartComprasion" style="height: 650px; width: 100%;"></div>
+
         <div id="mejpg"> <img src="projectimages/me.jpg" height="200" width="200"></div>
         <div class="loader" id="loading"></div>
         <div id="nosupport"></div>
-        <label>
-            <textarea rows="5" align="center" id="myText" cols="58" style="resize:none;font-size: larger" color="blue" readonly>שמי זיו שמיר מקיבוץ משמר העמק, עוסק בתכנות, הפרוייקט הנכחי הוא על מטבעות והשוואותיהם לדולרים</textarea>
-        </label>
+        <div>
+            <label>
+                <textarea rows="5" align="center" id="myText" cols="58" style="resize:none" readonly>שמי זיו שמיר מקיבוץ משמר העמק, עוסק בתכנות, הפרוייקט הנכחי הוא על מטבעות והשוואותיהם לדולרים</textarea>
+            </label>
+        </div>
     </div>
     <script src="bitCoinProjectfunctions.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
