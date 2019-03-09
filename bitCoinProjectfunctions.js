@@ -1192,12 +1192,15 @@ function homeFunction() {
     $("#liveReports").click(function (e) {
         RemoveCoinsStroage();
         clearInterval(myVar);
+        hidenMymodel();
 
     });
 
     $("#about-button").click(function (e) {
         RemoveCoinsStroage();
         clearInterval(myVar);
+        hidenMymodel();
+
 
     });
 }
