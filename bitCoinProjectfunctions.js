@@ -1,4 +1,4 @@
-﻿
+
 
 
 var id2 = 999;
@@ -14,6 +14,7 @@ var symbol;
 var coinsIDarrModel = ["null", "null", "null", "null", "null"];
  var coinsSymbols = ["null", "null", "null", "null", "null"];
 var hourcount = 0;
+var CoinsSelected = [];
 var dataCoins1 = [];
 var dataCoins2 = [];
 var dataCoins3 = [];
@@ -57,7 +58,7 @@ function hidenMymodel()
 
     if (flagmoreinfo == true) {
 
-    $(".table_cube").css('height', 425);
+    $(".table_cube").css('height', 600);
     }
 }
 
@@ -839,6 +840,7 @@ function getCoinsGraph(coins, SymbolsArr) {
 
     $("#Home-button").click(function (e) {
         clearInterval(myVar);
+        hidenMymodel();
         document.getElementById("nosupport").style.visibility = "hidden";
          dataCoins1 = [];
          dataCoins2 = [];
@@ -851,6 +853,7 @@ function getCoinsGraph(coins, SymbolsArr) {
     });
 
     $("#about-button").click(function (e) {
+        hidenMymodel();
         document.getElementById("nosupport").style.visibility = "hidden";
         dataCoins1 = [];
         dataCoins2 = [];
@@ -871,16 +874,27 @@ function checkTime(i) {
 
 function showMoreInfo(Elementid) {
 
+    let flag = false;
+
+    if (CoinsSelected.length > 0) {
+
+        for (let i = 0; i < CoinsSelected.length; i++) {
+            if (CoinsSelected[i] == Elementid) {
+                flag = true;
+            }
+        }
+    }
 
 
-    if (flagmoreinfo == false || Elementid != preid) {
+    if (flagmoreinfo == false && flag == false || Elementid != preid && flag == false) {
         if (preid != "null") {
 
            // document.getElementById(preid).style.visibility = "hidden";
         }
         preid = Elementid;
+        CoinsSelected.push(Elementid);
         document.getElementById(Elementid).style.visibility = "visible";
-        $(".table_cube").css('height', 425);
+        $(".table_cube").css('height', 600);
 
         flagmoreinfo = true;
 
@@ -892,7 +906,7 @@ function showMoreInfo(Elementid) {
         //document.getElementById(preid).style.visibility = "hidden";
         hideAllPictures(false);
         $(".table_cube").css('height', 300);
-
+        CoinsSelected = [];
         flagmoreinfo = false;
 
         return;
@@ -977,14 +991,27 @@ function RemoveCoinsStroage() {
 
 function showMoreInfomodel(Elementid, ElementCoinid) {
 
-    if (flagmoreinfocoin == false || ElementCoinid != preidcoin) {
+ let flag = false;
+
+    if (CoinsSelected.length > 0) {
+
+        for (let i = 0; i < CoinsSelected.length; i++) {
+            if (CoinsSelected[i] == ElementCoinid) {
+                flag = true;
+            }
+        }
+    }
+
+
+    if (flagmoreinfocoin == false && flag == false || ElementCoinid != preidcoin && flag == false) {
         if (preidcoin != "null") {
 
            // document.getElementById(preidcoin).style.visibility = "hidden";
         }
         preidcoin = ElementCoinid;
+        CoinsSelected.push(ElementCoinid);
         document.getElementById(ElementCoinid).style.visibility = "visible";
-        $(".table_cube").css('height', 425);
+        $(".table_cube").css('height', 600);
 
         flagmoreinfocoin = true;
 
@@ -996,7 +1023,7 @@ function showMoreInfomodel(Elementid, ElementCoinid) {
        // document.getElementById(preidcoin).style.visibility = "hidden";
         hideAllPictures(true);
         $(".table_cube").css('height', 300);
-
+        CoinsSelected = [];
         flagmoreinfocoin = false;
 
         return;
@@ -1177,7 +1204,7 @@ function homeFunction() {
 }
 
 
-
+flag = false
 function liveReportsFunction() {
 
     document.getElementById("mejpg").style.visibility = "hidden";
